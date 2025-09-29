@@ -1,26 +1,45 @@
 import React from 'react';
-import logo from './logo.svg';
+import { Provider } from 'react-redux';
+import { PersistGate } from 'redux-persist/integration/react';
+import { store, persistor } from './store';
+import { AppLayout } from './components/AppLayout';
+import { ErrorBoundary } from './components/ErrorBoundary';
+import { ConfigProvider, Spin } from 'antd';
+import 'antd/dist/reset.css';
 import './App.css';
 
-function App() {
+const App: React.FC = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ErrorBoundary>
+      <ConfigProvider
+        theme={{
+          token: {
+            colorPrimary: '#1890ff',
+            borderRadius: 6,
+            fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif',
+          },
+        }}
+      >
+        <Provider store={store}>
+          <PersistGate 
+            loading={
+              <div style={{ 
+                height: '100vh', 
+                display: 'flex', 
+                justifyContent: 'center', 
+                alignItems: 'center' 
+              }}>
+                <Spin size="large" />
+              </div>
+            } 
+            persistor={persistor}
+          >
+            <AppLayout />
+          </PersistGate>
+        </Provider>
+      </ConfigProvider>
+    </ErrorBoundary>
   );
-}
+};
 
 export default App;

@@ -1,3 +1,8 @@
+/* Reset and base styles */
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -5,9 +10,341 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #f5f5f5;
+  min-height: 100vh;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+/* App container */
+.app-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Main content area */
+.main-content {
+  flex: 1;
+  padding: 16px;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* Responsive containers */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+.container-sm {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+.container-lg {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+/* Chat interface styles */
+.chat-container {
+  height: 70vh;
+  min-height: 500px;
+  display: flex;
+  flex-direction: column;
+}
+
+.chat-messages {
+  flex: 1;
+  overflow-y: auto;
+  padding: 16px;
+  background: white;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+.chat-input {
+  background: white;
+  border-radius: 8px;
+  padding: 16px;
+}
+
+/* Table responsiveness */
+.ant-table-wrapper {
+  overflow-x: auto;
+}
+
+.responsive-table {
+  min-width: 600px;
+}
+
+/* Card hover effects */
+.interactive-card {
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.interactive-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Loading states */
+.loading-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* Error states */
+.error-container {
+  padding: 24px;
+  text-align: center;
+  background: #fff2f0;
+  border: 1px solid #ffccc7;
+  border-radius: 8px;
+  margin: 16px 0;
+}
+
+.error-icon {
+  color: #ff4d4f;
+  font-size: 48px;
+  margin-bottom: 16px;
+}
+
+/* Success states */
+.success-container {
+  padding: 24px;
+  text-align: center;
+  background: #f6ffed;
+  border: 1px solid #b7eb8f;
+  border-radius: 8px;
+  margin: 16px 0;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .main-content {
+    padding: 8px;
+  }
+  
+  .container,
+  .container-sm,
+  .container-lg {
+    padding: 0 8px;
+  }
+  
+  .chat-container {
+    height: 60vh;
+    min-height: 400px;
+  }
+  
+  .ant-steps {
+    overflow-x: auto;
+  }
+  
+  .ant-steps-item-title {
+    font-size: 12px !important;
+  }
+  
+  .ant-card {
+    margin: 8px 0;
+  }
+  
+  .ant-modal {
+    margin: 16px !important;
+    width: calc(100% - 32px) !important;
+    max-width: none !important;
+  }
+  
+  /* Stack buttons vertically on mobile */
+  .mobile-stack .ant-space-item {
+    width: 100%;
+  }
+  
+  .mobile-stack .ant-btn {
+    width: 100%;
+    margin-bottom: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-content {
+    padding: 4px;
+  }
+  
+  .chat-container {
+    height: 55vh;
+    min-height: 350px;
+  }
+  
+  .ant-card-body {
+    padding: 16px !important;
+  }
+  
+  .ant-typography-h1 {
+    font-size: 24px !important;
+  }
+  
+  .ant-typography-h2 {
+    font-size: 20px !important;
+  }
+  
+  .ant-typography-h3 {
+    font-size: 18px !important;
+  }
+}
+
+/* Tablet responsiveness */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .container {
+    max-width: 768px;
+  }
+  
+  .chat-container {
+    height: 65vh;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}
+
+/* Utility classes */
+.text-center {
+  text-align: center;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.mb-16 {
+  margin-bottom: 16px;
+}
+
+.mt-16 {
+  margin-top: 16px;
+}
+
+.p-16 {
+  padding: 16px;
+}
+
+/* Print styles */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  
+  body {
+    background: white;
+  }
+}
+
+/* Candidate List Mobile Responsiveness */
+.candidate-card .ant-card-meta-title {
+  margin-bottom: 8px !important;
+}
+
+.candidate-card .ant-card-actions {
+  margin: 0 !important;
+  padding: 12px 16px !important;
+}
+
+.candidate-card .ant-card-actions > li {
+  margin: 0 !important;
+}
+
+.candidate-card .ant-card-actions > li > span {
+  width: 100% !important;
+}
+
+@media (max-width: 768px) {
+  .candidate-card {
+    margin-bottom: 12px !important;
+  }
+  
+  .candidate-card .ant-card-body {
+    padding: 16px !important;
+  }
+  
+  .candidate-card .ant-card-meta-description {
+    margin-top: 8px !important;
+  }
+  
+  /* Enhanced table responsiveness */
+  .ant-table-thead > tr > th {
+    font-size: 12px !important;
+    padding: 8px 4px !important;
+  }
+  
+  .ant-table-tbody > tr > td {
+    font-size: 12px !important;
+    padding: 8px 4px !important;
+  }
+  
+  /* Search and Filter Responsiveness */
+  .ant-space {
+    width: 100% !important;
+  }
+  
+  .ant-space-item {
+    width: 100% !important;
+  }
+}
+
+/* Button Responsiveness */
+@media (max-width: 480px) {
+  .ant-btn {
+    font-size: 12px !important;
+    height: 28px !important;
+    padding: 0 8px !important;
+  }
+  
+  .ant-btn-sm {
+    height: 24px !important;
+    font-size: 11px !important;
+  }
 }

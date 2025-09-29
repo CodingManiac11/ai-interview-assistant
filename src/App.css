@@ -1,38 +1,116 @@
-.App {
-  text-align: center;
+/* Global Styles for AI Interview Assistant */
+* {
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+/* Responsive Layout */
+.ant-layout {
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* Mobile optimizations */
+@media (max-width: 768px) {
+  .ant-tabs-nav {
+    padding: 0 12px !important;
   }
-  to {
-    transform: rotate(360deg);
+  
+  .ant-card {
+    margin: 8px !important;
+  }
+  
+  .ant-table-responsive table {
+    font-size: 12px;
+  }
+  
+  .ant-statistic-title {
+    font-size: 12px;
+  }
+  
+  .ant-statistic-content {
+    font-size: 18px !important;
+  }
+}
+
+/* Chat Interface Styling */
+.chat-message {
+  transition: all 0.3s ease;
+}
+
+.chat-message:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Timer Animation */
+@keyframes pulse {
+  0% { opacity: 1; }
+  50% { opacity: 0.7; }
+  100% { opacity: 1; }
+}
+
+.timer-urgent {
+  animation: pulse 1s infinite;
+}
+
+/* Loading States */
+.loading-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* Smooth Transitions */
+.ant-card, .ant-modal, .ant-table, .ant-steps {
+  transition: all 0.3s ease;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}
+
+/* Accessibility */
+.ant-btn:focus,
+.ant-input:focus,
+.ant-select-selector:focus {
+  outline: 2px solid #1890ff;
+  outline-offset: 2px;
+}
+
+/* Print Styles */
+@media print {
+  .ant-layout-header,
+  .ant-tabs-nav,
+  .ant-pagination,
+  .ant-btn {
+    display: none !important;
   }
 }
