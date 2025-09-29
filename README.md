@@ -1,4 +1,4 @@
-# 🤖 AI-Powered Interview Assistant# AI-Powered Interview Assistant
+# 🤖 AI-Powered Interview Assistant
 
 
 
@@ -6,11 +6,11 @@ A modern, responsive React application that automates technical interviews using
 
 
 
-## ✨ Features## 🚀 Features
+## 🚀 Features
 
 
 
-### 👨‍💼 Interviewee Experience### Interviewee Experience
+### 👨‍💼  Interviewee Experience
 
 - **📄 Smart Resume Upload**: Support for PDF and DOCX files with intelligent parsing- **Resume Upload**: Support for PDF and DOCX files with automatic parsing
 
@@ -44,7 +44,7 @@ A modern, responsive React application that automates technical interviews using
 
 
 
-### 🎨 UI/UX Features### Prerequisites
+### 🎨 UI/UX Features
 
 - **🎯 Ant Design Components**: Professional, consistent design system- Node.js 16+ and npm
 
@@ -60,7 +60,7 @@ A modern, responsive React application that automates technical interviews using
 
    npm install
 
-## 🏗️ Technical Architecture   ```
+## 🏗️ Technical Architecture  
 
 
 
